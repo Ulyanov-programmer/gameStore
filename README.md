@@ -1,4 +1,8 @@
-Not too complicated, not too simple website with a video clip on the background.
+A multi-page online store website adapted from the tablet version for all resolutions.
+
+Contains the implementation of using the JustValidate plugin. 
+
+Designer... The designer experimented in the process of creating the layout, so I had to finish it for him.
 
 
 <details>
