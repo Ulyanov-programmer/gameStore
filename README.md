@@ -1,4 +1,4 @@
-A multi-page online store website adapted from the tablet version for all resolutions.
+The multi-page online store website adapted from the tablet version for all resolutions.
 
 Contains the implementation of using the JustValidate plugin. 
 
