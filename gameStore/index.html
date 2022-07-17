@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- maximum-scale=1.0, user-scalable=0 does not allow content to be scaled on Android. -->
+<!-- Disables forced link for phone number on iOS -->
+<meta name="format-detection" content="telephone=no">
+
+<meta name="description" content="description">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="./img/favicon.svg">
+<link rel="mask-icon" href="./img/favicon.svg" color="#000000">
+<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+<!-- <link rel="manifest" href="manifest.json"> -->
+
+<link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" crossorigin>
+
+<!-- SEO
+    <meta name="keywords" content="keyword1,">
+    <meta name="robots" content="none,noindex,nofollow,noimageindex,noarchive,nosnippet">
+    <meta name="Author" content="Author">
+    <meta name="Copyright" content="Copyright">
+    <meta name="Address" content="Address"> 
+    <! - Redirect (reload) the page. Delay in seconds; url=Site / page address ->
+    <meta http-equiv="refresh" content="seconds; url = URL">
+
+    Facebook
+    <! - site localization, for the Russian-language site ru_RU ->
+    <meta property="og:locale" content="ru_RU">
+    <! - content type, default is article ->
+    <meta property="og:type" content="article">
+    <! - the title of the page that will be displayed in the post of the social network ->
+    <meta property="og:title" content="META tags">
+    <! - page description ->
+    <meta property="og:description" content="Description of the page about META tags">
+    <! - link to the image that will be published in the post ->
+    <meta property="og:image" content="path">
+    <! - link to the current page ->
+    <meta property="og: url" content="path">
+    <! - site name ->
+    <meta property="og:site_name" content="Freelancer for life">
+
+    Twitter
+    <! - Map type, default is summary ->
+    <meta name="twitter: card" content="summary">
+    <! - Author name / login ->
+    <meta name="twitter: site" content="Ivan">
+    <! - Page title ->
+    <meta name="twitter: title" content="META tags">
+    <! - Page description ->
+    <meta name="twitter: description" content="about META tags">
+    <! - Link to image ->
+    <meta name="twitter: image" content="path">
+  -->
+
+<title>Joyni</title>
+	<link rel="stylesheet" href="css/style.min.css?_v=20220717123536">
+</head>
+
+<body>
+	<header class="header">
+	<div class="header__body">
+		<div class="header__top">
+			<div class="header__top-container container">
+				<button type="button" id="burgerButton" class="header__burger burger-btn" aria-label="burger-menu show button">
+					<svg class="burger-btn__svg" width="40" height="40" viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+						<rect class="burger-btn__rect-top" width="95%" height="20%" x="5%" y="0%" fill="#000" />
+						<rect class="burger-btn__rect-center" width="95%" height="20%" x="5%" y="40%" fill="#000" />
+						<rect class="burger-btn__rect-bottom" width="95%" height="20%" x="5%" y="80%" fill="#000" />
+					</svg>
+				</button>
+				<nav class="burger-menu">
+					<div class="burger-menu__body">
+						<ul>
+							<li class="fs-element">
+								<a class="nav-link nav-link_home" target="_self" rel="noopener" href="index.html">Главная</a>
+							</li>
+							<li class="fs-element">
+								
+								<button data-open-modal-id="searchModal" class="nav-link nav-link_search" type='button'>Поиск</button>
+								
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_favorites" target="_self" rel="noopener" href="favorites.html">Избранное</a>
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_card" target="_self" rel="noopener" href="card.html">Корзина</a>
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_profile" target="_self" rel="noopener" href="profile.html">Профиль</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<nav class="navmenu">
+					<div class="navmenu__body">
+						<ul class='navmenu__list'>
+							<li>
+								<a class="header-link nav-link nav-link_home active" target="_self" rel="noopener" href="index.html">Home</a>
+							</li>
+							
+							<li>
+								<button data-open-modal-id="searchModal" class="header-link nav-link nav-link_search " type='button'>Search</button>
+							</li>
+							
+							<li>
+								<a class="header-link nav-link nav-link_favorites " target="_self" rel="noopener" href="favorites.html">Favorites</a>
+							</li>
+							<li>
+								<a class="header-link nav-link nav-link_card " target="_self" rel="noopener" href="card.html">Card</a>
+							</li>
+							<li>
+								<a class="header-link nav-link nav-link_profile " target="_self" rel="noopener" href="profile.html">Profile</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<div class="current-page-icon">
+					
+					<img src="img/icons/home.svg" loading='lazy' alt='homeIcon' width=67 height=68>
+					
+					
+					
+					
+					
+				</div>
+
+				<a href="index.html" class="logo _contain-img" aria-label="logo, reference to main page">
+					<picture><source srcset="img/logo.avif" type="image/avif"><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo" width=294 height=111></picture>
+				</a>
+			</div>
+		</div>
+		<div class="header__bottom">
+			<div class="header__bottom-container  container">
+				
+				<div class='submenu-wrapper'>
+					<button type='button' id='categoryMenuButton' class='submenu__click_button submenu-button'>Categories</button>
+					<div class='menu__click submenu-menu submenu-menu_to-right'>
+						<nav class="submenu-menu__content">
+							<ul class='navmenu__list'>
+								<li>
+									<a class="nav-link nav-link_centring nav-link_gamepad" target="_self" rel="noopener" href="#">Gamepads</a>
+								</li>
+								<li>
+									<a class="nav-link nav-link_centring nav-link_controller" target="_self" rel="noopener" href="#">Other controllers</a>
+								</li>
+								<li>
+									<a class="nav-link nav-link_centring nav-link_accessories" target="_self" rel="noopener" href="#">Accessories</a>
+								</li>
+								<li>
+									<a class="nav-link nav-link_centring nav-link_repair-parts" target="_self" rel="noopener" href="#">Spare parts</a>
+								</li>
+								<li>
+									<a class="nav-link nav-link_centring nav-link_individual-order" target="_self" rel="noopener" href="#">Individual order</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="companies-row-wrapper">
+					<div class="companies-row">
+						<a href="#" class="company bordered-item">Microsoft</a>
+						<a href="#" class="company bordered-item">Sony</a>
+						<a href="#" class="company bordered-item">Nintendo</a>
+						<a href="#" class="company bordered-item">Castom</a>
+						<a href="#" class="company bordered-item">Others</a>
+						<a href="#" class="company bordered-item">Others</a>
+						<a href="#" class="company bordered-item">Others</a>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</header>
+
+	<main class="main">
+		<div class="main__body">
+			<section class='fullscreen-block hero _block-shadow'>
+				<div class='fullscreen-block__body'>
+					<span class="fullscreen-block__name-of-product fullscreen-block__name-of-product_red _text-uppercase _rodchenko-font">BRIck</span>
+					<h2 tabindex='0' class='fullscreen-block__title _futura-font'>Castom <br> wirless <br> contoller</h2>
+					<button type="button" class="fullscreen-block__button black-button _teko-font bordered-item">Buy</button>
+
+					<div class="fullscreen-block__image _cover-img">
+						<img src="img/content/heroProduct.gif" alt='productName' width=1318 height=1067>
+					</div>
+				</div>
+			</section>
+			<section class='brands'>
+				<div class='brands__body'>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/playstationGamepad.avif" type="image/avif"><source srcset="img/content/playstationGamepad.webp" type="image/webp"><img src="img/content/playstationGamepad.png" loading='lazy' alt='play station' width=813 height=418></picture>
+							</div>
+							<h2 class="category__title _futura-font">Play station</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/microsoftGamepad.avif" type="image/avif"><source srcset="img/content/microsoftGamepad.webp" type="image/webp"><img src="img/content/microsoftGamepad.png" loading='lazy' alt='play station' width=813 height=418></picture>
+							</div>
+							<h2 class="category__title _futura-font">Microsoft</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/nintendoGamepad.avif" type="image/avif"><source srcset="img/content/nintendoGamepad.webp" type="image/webp"><img src="img/content/nintendoGamepad.png" loading='lazy' alt='play station' width=813 height=418></picture>
+							</div>
+							<h2 class="category__title _futura-font">Nintendo</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/googleGamepad.avif" type="image/avif"><source srcset="img/content/googleGamepad.webp" type="image/webp"><img src="img/content/googleGamepad.png" loading='lazy' alt='play station' width=813 height=418></picture>
+							</div>
+							<h2 class="category__title _futura-font">Google</h2>
+						</div>
+					</a>
+				</div>
+			</section>
+			<section class='fullscreen-block _block-shadow'>
+				<div class='fullscreen-block__body fullscreen-block__body_custom-block'>
+					<span class="fullscreen-block__name-of-product fullscreen-block__name-of-product_blue _rodchenko-font">Custom</span>
+					<h2 tabindex='0' class='fullscreen-block__title _futura-font'>individual <br> color <br> style</h2>
+
+					<div class="fullscreen-block__image _contain-img">
+						<picture><source srcset="img/content/customStyle.avif" type="image/avif"><source srcset="img/content/customStyle.webp" type="image/webp"><img src="img/content/customStyle.png" alt='Custom Style' width=1140 height=901></picture>
+					</div>
+				</div>
+			</section>
+			<section class='other'>
+				<div class='other__body'>
+					<a href="#" class="about-us _block-shadow _futura-font"><h3>About Us</h3></a>
+					<a href="#" class="vr category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/vr.avif" type="image/avif"><source srcset="img/content/vr.webp" type="image/webp"><img src="img/content/vr.png" loading='lazy' alt='vr'></picture>
+							</div>
+							<h2 class="category__title _futura-font">VR</h2>
+						</div>
+					</a>
+					<a href="#" class="controllers category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/controllers.avif" type="image/avif"><source srcset="img/content/controllers.webp" type="image/webp"><img src="img/content/controllers.png" loading='lazy' alt='controllers'></picture>
+							</div>
+							<h2 class="category__title _futura-font">Other controllers</h2>
+						</div>
+					</a>
+					<a href="#" class="components category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<picture><source srcset="img/content/components.avif" type="image/avif"><source srcset="img/content/components.webp" type="image/webp"><img src="img/content/components.png" loading='lazy' alt='components'></picture>
+							</div>
+							<h2 class="category__title _futura-font">Components</h2>
+						</div>
+					</a>
+					<a href="#" class="want-to-now _block-shadow _futura-font"><h3>What do you want <br> to know?</h3></a>
+				</div>
+			</section>
+			<footer class="footer">
+	<div class="footer__body">
+		<section class="footer__socials">
+			<a href="#" aria-label="instagram" class="social">
+				<svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M48.5 36.9509C46.216 36.9518 43.9835 37.6299 42.0849 38.8994C40.1862 40.169 38.7066 41.973 37.8331 44.0834C36.9597 46.1938 36.7316 48.5157 37.1777 50.7558C37.6238 52.9958 38.7241 55.0532 40.3394 56.6679C41.9548 58.2827 44.0126 59.3822 46.2528 59.8275C48.493 60.2727 50.8149 60.0438 52.925 59.1695C55.035 58.2953 56.8385 56.815 58.1073 54.9159C59.3762 53.0167 60.0534 50.784 60.0534 48.5C60.0511 45.437 58.833 42.5001 56.6667 40.3346C54.5004 38.1691 51.563 36.9521 48.5 36.9509ZM75.5019 28.0737C74.914 26.5837 74.0262 25.2304 72.8935 24.0978C71.7609 22.9652 70.4076 22.0773 68.9176 21.4894C64.3708 19.6945 53.5449 20.0972 48.5 20.0972C43.4551 20.0972 32.6401 19.6793 28.0802 21.4894C26.5902 22.0773 25.2369 22.9652 24.1043 24.0978C22.9717 25.2304 22.0838 26.5837 21.4959 28.0737C19.7031 32.6206 20.1037 43.4573 20.1037 48.4978C20.1037 53.5384 19.7031 64.3621 21.5046 68.9241C22.0925 70.4141 22.9803 71.7674 24.113 72.9C25.2456 74.0327 26.5989 74.9205 28.0889 75.5084C32.6357 77.3034 43.4616 76.9007 48.5087 76.9007C53.5557 76.9007 64.3664 77.3185 68.9263 75.5084C70.4163 74.9205 71.7696 74.0327 72.9022 72.9C74.0348 71.7674 74.9227 70.4141 75.5106 68.9241C77.3185 64.3773 76.9028 53.5405 76.9028 48.5C76.9028 43.4595 77.3185 32.6379 75.5106 28.0759L75.5019 28.0737ZM48.5 66.2545C44.9885 66.2545 41.5559 65.2132 38.6361 63.2623C35.7164 61.3114 33.4408 58.5385 32.097 55.2943C30.7532 52.0501 30.4016 48.4803 31.0867 45.0363C31.7717 41.5922 33.4627 38.4287 35.9457 35.9457C38.4287 33.4627 41.5922 31.7717 45.0363 31.0867C48.4803 30.4016 52.0501 30.7532 55.2943 32.097C58.5385 33.4408 61.3114 35.7164 63.2623 38.6361C65.2132 41.5559 66.2545 44.9885 66.2545 48.5C66.2573 50.8323 65.8 53.1423 64.9088 55.2977C64.0175 57.4531 62.7099 59.4114 61.0607 61.0607C59.4114 62.7099 57.4531 64.0175 55.2977 64.9088C53.1423 65.8 50.8323 66.2573 48.5 66.2545ZM66.9863 34.1449C66.1666 34.1453 65.3651 33.9026 64.6833 33.4475C64.0015 32.9924 63.47 32.3453 63.1561 31.5881C62.8421 30.8309 62.7597 29.9976 62.9193 29.1936C63.079 28.3895 63.4735 27.6509 64.053 27.0711C64.6325 26.4913 65.3709 26.0964 66.1749 25.9363C66.9788 25.7763 67.8122 25.8582 68.5695 26.1718C69.3269 26.4854 69.9743 27.0166 70.4297 27.6981C70.8852 28.3797 71.1283 29.181 71.1283 30.0007C71.1306 30.5451 71.0253 31.0845 70.8187 31.5881C70.612 32.0917 70.3079 32.5496 69.9239 32.9354C69.5399 33.3212 69.0835 33.6274 68.5809 33.8365C68.0783 34.0455 67.5393 34.1532 66.995 34.1535L66.9863 34.1449ZM86.6071 0H10.3929C7.6365 0 4.99304 1.09496 3.044 3.044C1.09496 4.99304 0 7.6365 0 10.3929L0 86.6071C0 89.3635 1.09496 92.007 3.044 93.956C4.99304 95.905 7.6365 97 10.3929 97H86.6071C89.3635 97 92.007 95.905 93.956 93.956C95.905 92.007 97 89.3635 97 86.6071V10.3929C97 7.6365 95.905 4.99304 93.956 3.044C92.007 1.09496 89.3635 0 86.6071 0ZM82.9004 62.7902C82.621 68.3395 81.3544 73.2567 77.3034 77.2969C73.2523 81.3371 68.3395 82.6297 62.7967 82.8939C57.0784 83.2165 39.9346 83.2165 34.2163 82.8939C28.667 82.6146 23.7672 81.3458 19.7096 77.2969C15.6521 73.248 14.3768 68.3287 14.1126 62.7902C13.79 57.0698 13.79 39.9237 14.1126 34.2098C14.3919 28.6605 15.6434 23.7433 19.7096 19.7031C23.7758 15.6629 28.6886 14.3854 34.2163 14.1213C39.9346 13.7987 57.0784 13.7987 62.7967 14.1213C68.346 14.4006 73.261 15.6694 77.3034 19.7183C81.3458 23.7672 82.6362 28.6864 82.9004 34.2358C83.223 39.9346 83.223 57.0654 82.9004 62.7902Z"
+						fill="#F2F2F2" />
+				</svg>
+			</a>
+			<a href="#" aria-label="twitter" class="social">
+				<svg width="96" height="97" viewBox="0 0 96 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M85.7143 0H10.2857C4.60714 0 0 4.65513 0 10.3929V86.6071C0 92.3449 4.60714 97 10.2857 97H85.7143C91.3929 97 96 92.3449 96 86.6071V10.3929C96 4.65513 91.3929 0 85.7143 0ZM75.2357 34.383C75.2786 34.9893 75.2786 35.6172 75.2786 36.2234C75.2786 54.9955 61.1357 76.6257 35.2929 76.6257C27.3214 76.6257 19.9286 74.2873 13.7143 70.26C14.85 70.39 15.9429 70.4333 17.1 70.4333C23.6786 70.4333 29.7214 68.1815 34.5429 64.3708C28.3714 64.2408 23.1857 60.1487 21.4071 54.5192C23.5714 54.844 25.5214 54.844 27.75 54.2594C21.3214 52.9386 16.5 47.2225 16.5 40.3156V40.1424C18.3643 41.2033 20.55 41.8529 22.8429 41.9395C20.9152 40.6439 19.335 38.8863 18.2432 36.8235C17.1513 34.7607 16.5819 32.4569 16.5857 30.1176C16.5857 27.4761 17.2714 25.0511 18.4929 22.9509C25.4143 31.5683 35.8071 37.1978 47.4643 37.804C45.4714 28.169 52.6071 20.3527 61.1786 20.3527C65.2286 20.3527 68.8714 22.0632 71.4429 24.8346C74.6143 24.2283 77.6571 23.0375 80.3571 21.4136C79.3071 24.7047 77.1 27.4761 74.1857 29.2299C77.0143 28.9268 79.7571 28.1257 82.2857 27.0214C80.3786 29.8578 77.9786 32.3694 75.2357 34.383Z"
+						fill="#F2F2F2" />
+				</svg>
+			</a>
+			<a href="#" aria-label="vkontakte" class="social">
+				<svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M10 0C4.47715 0 0 4.47716 0 10V86.7146C0 92.2375 4.47716 96.7146 10 96.7146H86.7146C92.2375 96.7146 96.7146 92.2375 96.7146 86.7146V10C96.7146 4.47715 92.2375 0 86.7146 0H10ZM83.4519 25.0421C86.0627 25.0421 86.6055 26.389 86.0628 28.2189C84.9773 33.2402 74.4311 48.0553 74.4165 48.0699C73.507 49.5339 73.1404 50.2659 74.4165 51.9055C74.5122 52.0404 74.9991 52.537 75.7349 53.2877C78.8308 56.4459 86.3342 64.1004 87.6616 68.2284C88.3803 70.6586 87.1335 71.8883 84.6693 71.8883H76.0299C73.7226 71.8883 72.5582 70.596 70.0375 67.7986C68.9687 66.6124 67.6561 65.1557 65.9091 63.4121C60.7753 58.4786 58.5752 57.8344 57.2991 57.8344C54.9579 57.8344 54.9638 58.4992 55.019 64.6843C55.0288 65.7844 55.0402 67.0591 55.0402 68.5359C55.0402 70.6586 54.3655 71.8883 48.865 71.8883C39.7123 71.8883 29.6501 66.3399 22.5069 56.107C11.7847 41.1162 8.85109 29.7707 8.85109 27.4869C8.85109 26.1987 9.34979 25.0421 11.814 25.0421H20.4534C22.6682 25.0421 23.5043 26.0083 24.355 28.3946C28.5794 40.6917 35.708 51.437 38.6415 51.437C39.7416 51.437 40.2403 50.9246 40.2403 48.1431V35.4361C40.0408 31.8153 38.7757 30.2487 37.8391 29.0888C37.261 28.3728 36.808 27.8119 36.808 27.0185C36.808 26.0669 37.6294 25.0421 39.0082 25.0421H52.5907C54.4095 25.0421 55.0255 26.023 55.0255 28.2189V45.3031C55.0255 47.133 55.8616 47.7772 56.4043 47.7772C57.5044 47.7772 58.4285 47.133 60.438 45.1274C66.6572 38.1883 71.0575 27.4869 71.0575 27.4869C71.6002 26.1987 72.6123 25.0421 74.8125 25.0421H83.4519Z"
+						fill="#F2F2F2" />
+				</svg>
+			</a>
+		</section>
+		<section class="footer__buttons">
+			<button type="button" aria-label="go to previous page" class="prev-page-btn">
+				<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M52 104C23.2742 104 -5.5947e-06 80.7258 -3.08341e-06 52C-5.72121e-07 23.2742 23.2742 5.7212e-07 52 3.08341e-06C80.7258 5.5947e-06 104 23.2742 104 52C104 80.7258 80.7258 104 52 104ZM58.0597 73.8903L42.229 58.7097L80.5161 58.7097C83.3048 58.7097 85.5484 56.4661 85.5484 53.6774L85.5484 50.3226C85.5484 47.5339 83.3048 45.2903 80.5161 45.2903L42.229 45.2903L58.0597 30.1097C60.0936 28.1597 60.1355 24.9097 58.1436 22.9177L55.8371 20.6323C53.8661 18.6613 50.679 18.6613 48.729 20.6323L20.9048 48.4355C18.9339 50.4064 18.9339 53.5935 20.9048 55.5435L48.729 83.3887C50.7 85.3597 53.8871 85.3597 55.8371 83.3887L58.1435 81.1032C60.1355 79.0903 60.0935 75.8403 58.0597 73.8903Z"
+						fill="#E5E5E5" />
+				</svg>
+			</button>
+			<button type="button" aria-label="go to top of this page" class="to-top-btn">
+				<svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="55.9999" cy="55.9999" r="55.9999" fill="white" />
+					<path d="M84.3001 71.5077L90.4614 65.3662L55.9999 31.0154L21.5384 65.3662L27.6997 71.5077L55.9999 43.2984L84.3001 71.5077Z" fill="#1C1C1C" stroke="#1C1C1C" stroke-width="5" />
+				</svg>
+			</button>
+		</section>
+	</div>
+</footer>
+		</div>
+	</main>
+
+</body>
+
+<script type="module" src="scripts/generalScript.js?_v=20220717123536"></script>
+<script type="module" src="scripts/burgerMenuAPI.js?_v=20220717123536"></script>
+<script type="module" src="scripts/submenuAPI.js?_v=20220717123536"></script>
+<script type="module" src="scripts/horizontalScroll.js?_v=20220717123536"></script>
+<script type="module" src="scripts/modalWindowAPI.js?_v=20220717123536"></script>
+
+
+<section id="searchModal" class='modal-window'>
+	<div class="modal-window__body">
+		<div class="modal-window__content">
+			<form class='searchbar' action='#'>
+				<fieldset class='searchbar__body searchbar__body_vertical'>
+					<input class='searchbar__input bordered-item' type='text' name='searchinput' placeholder='Search query...' required>
+					<button class="searchbar__submit" type='submit'>Search</button>
+					<a href="searchResults.html">Results page</a>
+				</fieldset>
+			</form>
+			<button class="modal-window__closer modal-window__closer_non-active" type='button' data-modal-close></button>
+		</div>
+	</div>
+</section>
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->

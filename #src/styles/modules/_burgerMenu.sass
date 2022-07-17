@@ -1,0 +1,60 @@
+.burger-menu
+	position: fixed
+	top: 0
+	left: -100%
+	z-index: 4 !important
+	+flex-set(column, nowrap)
+	background: #fff
+	box-shadow: 0 0 10px rgba(0,0,0,0.1)
+	transition: all .3s ease
+
+	@media (min-width: $burgerMenuShowWidth)
+		display: none
+
+	&.active
+		left: 0
+
+	&__body
+
+		ul
+			+flex-set(column, nowrap)
+			overflow: auto
+			height: 50vh
+			background: #fff
+			
+			.fs-element
+				&:not(:last-child)
+					border-bottom: 1px solid #fff
+				>*
+					font-size: rem(24)
+					color: inherit
+					padding: 20px 40px
+
+.burger-btn
+	z-index: 5
+	display: block
+
+	@media (min-width: $burgerMenuShowWidth)
+		display: none
+
+	&__svg
+		*
+			transform-origin: left
+			transform-box: fill-box
+			transition: all .3s ease
+
+	&.active
+		.burger-btn
+			&__rect-top
+				transform: rotate(45deg)
+
+			&__rect-center
+				overflow: hidden
+				+hide()
+
+			&__rect-bottom
+				transform: rotate(-45deg)
+
+.navmenu
+	@media (max-width: $burgerMenuShowWidth)
+		display: none

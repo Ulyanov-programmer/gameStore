@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('components/_headContent.htm', {
+	"title": "Joyni",
+	})
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+	@@include('_header.htm', {
+	'page': 'home',
+	})
+
+	<main class="main">
+		<div class="main__body">
+			<section class='fullscreen-block hero _block-shadow'>
+				<div class='fullscreen-block__body'>
+					<span class="fullscreen-block__name-of-product fullscreen-block__name-of-product_red _text-uppercase _rodchenko-font">BRIck</span>
+					<h2 tabindex='0' class='fullscreen-block__title _futura-font'>Castom <br> wirless <br> contoller</h2>
+					<button type="button" class="fullscreen-block__button black-button _teko-font bordered-item">Buy</button>
+
+					<div class="fullscreen-block__image _cover-img">
+						<img src="img/content/heroProduct.gif" alt='productName' width=1318 height=1067>
+					</div>
+				</div>
+			</section>
+			<section class='brands'>
+				<div class='brands__body'>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/playstationGamepad.png" loading='lazy' alt='play station' width=813 height=418>
+							</div>
+							<h2 class="category__title _futura-font">Play station</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/microsoftGamepad.png" loading='lazy' alt='play station' width=813 height=418>
+							</div>
+							<h2 class="category__title _futura-font">Microsoft</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/nintendoGamepad.png" loading='lazy' alt='play station' width=813 height=418>
+							</div>
+							<h2 class="category__title _futura-font">Nintendo</h2>
+						</div>
+					</a>
+					<a href="#" class="brands__item category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/googleGamepad.png" loading='lazy' alt='play station' width=813 height=418>
+							</div>
+							<h2 class="category__title _futura-font">Google</h2>
+						</div>
+					</a>
+				</div>
+			</section>
+			<section class='fullscreen-block _block-shadow'>
+				<div class='fullscreen-block__body fullscreen-block__body_custom-block'>
+					<span class="fullscreen-block__name-of-product fullscreen-block__name-of-product_blue _rodchenko-font">Custom</span>
+					<h2 tabindex='0' class='fullscreen-block__title _futura-font'>individual <br> color <br> style</h2>
+
+					<div class="fullscreen-block__image _contain-img">
+						<img src="img/content/customStyle.png" alt='Custom Style' width=1140 height=901>
+					</div>
+				</div>
+			</section>
+			<section class='other'>
+				<div class='other__body'>
+					<a href="#" class="about-us _block-shadow _futura-font"><h3>About Us</h3></a>
+					<a href="#" class="vr category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/vr.png" loading='lazy' alt='vr'>
+							</div>
+							<h2 class="category__title _futura-font">VR</h2>
+						</div>
+					</a>
+					<a href="#" class="controllers category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/controllers.png" loading='lazy' alt='controllers'>
+							</div>
+							<h2 class="category__title _futura-font">Other controllers</h2>
+						</div>
+					</a>
+					<a href="#" class="components category _block-shadow">
+						<div class="category__body">
+							<div class="category__preview _contain-img">
+								<img src="img/content/components.png" loading='lazy' alt='components'>
+							</div>
+							<h2 class="category__title _futura-font">Components</h2>
+						</div>
+					</a>
+					<a href="#" class="want-to-now _block-shadow _futura-font"><h3>What do you want <br> to know?</h3></a>
+				</div>
+			</section>
+			@@include('_footer.htm', {})
+		</div>
+	</main>
+
+</body>
+
+<script type="module" src="scripts/generalScript.js"></script>
+<script type="module" src="scripts/burgerMenuAPI.js"></script>
+<script type="module" src="scripts/submenuAPI.js"></script>
+<script type="module" src="scripts/horizontalScroll.js"></script>
+<script type="module" src="scripts/modalWindowAPI.js"></script>
+
+
+@@include('components/_modals.htm', {
+	
+})
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->

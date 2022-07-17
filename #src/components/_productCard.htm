@@ -1,0 +1,42 @@
+<section class="product">
+	<div class="product__body @@addClasses">
+		@@if(previewType == 'image') {
+		<div class="product__preview product__preview_image  _contain-img _block-shadow">
+			<img src="img/content/@@imgName.png" loading='lazy' alt='@@title' width=539 height=512>
+		</div>
+		}
+		@@if(previewType == 'slider') {
+		<div class="product__preview product__preview_slider _block-shadow">
+			<div class='swiper product__preview-slider'>
+				<div class='swiper-wrapper'>
+					<div class='swiper-slide _contain-img'>
+						<img src="img/content/@@imgName.png" loading='lazy' alt='@@title' width=539 height=512>
+					</div>
+					<div class='swiper-slide _contain-img'>
+						<img src="img/content/@@imgName.png" loading='lazy' alt='@@title' width=539 height=512>
+					</div>
+				</div>
+			</div>
+			<div class='swiper product__preview-thumbs'>
+				<div class='swiper-wrapper'>
+					<div class='swiper-slide'><span class="product__preview-thumb product__preview-thumb_red-color"></span></div>
+					<div class='swiper-slide'><span class="product__preview-thumb product__preview-thumb_black-color"></span></div>
+				</div>
+			</div>
+		</div>
+		}
+		<div class="product__content product__content_card-version _futura-font _block-shadow">
+			<h2 class="product__name">@@title</h2>
+
+			<span class="product__price _teko-font">100</span>
+			<button type="button" class="product__buy-btn black-button _teko-font bordered-item">@@btnText</button>
+
+			<button type="button" class="product__delete-from-card product__delete-from-card_fixed">
+				<svg width="130" height="131" viewBox="0 0 130 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="130" height="131" fill="#C4C4C4" />
+					<path d="M37 94L93 37M37 37L93 93.5632" stroke="black" stroke-width="10" />
+				</svg>
+			</button>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,518 @@
+html
+	scroll-behavior: smooth
+	@media (min-width: 768px)
+		-ms-overflow-style: none
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			width: 0
+	::selection
+		background: #C4C4C4
+
+.container
+	margin: auto
+
+	@media (min-width: #{$layoutWidth + px})
+		// Insert the width of the container as a percentage of the width of the layout.
+		width: 90vw
+
+	@media (min-width: 768px) and (max-width: #{$layoutWidth + px})
+		width: 90vw
+
+	@media (min-width: 426px) and (max-width: 768px)
+		width: 90vw
+
+	@media (max-width: 426px)
+		width: 95vw
+
+.modal-window
+	position: fixed
+	z-index: 15
+	top: 0
+	left: 0
+	background: #00000046
+	+block-size(100vw, 100vh)
+	+hide()
+	transition: all .3s ease
+
+	&.active
+		+show()
+
+	&__body
+		display: grid
+		height: 100%
+		align-items: center
+		justify-items: center
+
+	&__content
+		padding: 30px
+		background: #fff
+
+		@media (max-width: 426px)
+			padding: 15px
+
+	&__closer
+		opacity: 0.8
+		&_non-active
+			position: fixed
+			pointer-events: none
+
+._contain-img
+	img
+		+block-size(100%)
+		object-fit: contain
+
+._cover-img
+	img
+		+block-size(100%)
+		object-fit: cover
+
+.nav-link
+	+flex-set(row, nowrap)
+	align-items: end
+
+	&:before
+		display: inline-block
+		+block-size(1.5em, 1.5em)
+		margin-right: 15px
+		content: ''
+
+	&_centring
+		align-items: center
+
+	&_home
+		&:before
+			+bg-img-multi-type('../img/icons/home.svg', no-repeat center / contain)
+
+	&_search
+		&:before
+			+bg-img-multi-type('../img/icons/search.svg', no-repeat center / contain)
+
+	&_favorites
+		&:before
+			+bg-img-multi-type('../img/icons/favs.svg', no-repeat center / contain)
+
+	&_card
+		&:before
+			+bg-img-multi-type('../img/icons/briefcase.svg', no-repeat center / contain)
+
+	&_profile
+		&:before
+			+bg-img-multi-type('../img/icons/user.svg', no-repeat center / contain)
+
+	&_gamepad
+		&:before
+			+bg-img-multi-type('../img/icons/gamepad.svg', no-repeat center / contain)
+
+	&_controller
+		&:before
+			+bg-img-multi-type('../img/icons/controller.svg', no-repeat center / contain)
+
+	&_accessories
+		&:before
+			+bg-img-multi-type('../img/icons/accessories.svg', no-repeat center / contain)
+
+	&_repair-parts
+		&:before
+			+bg-img-multi-type('../img/icons/repair-parts.svg', no-repeat center / contain)
+
+	&_individual-order
+		&:before
+			+bg-img-multi-type('../img/icons/individual-order.svg', no-repeat center / contain)
+
+.current-page-icon
+	+advansedPosition(absolute, 50%, auto, auto, 50%)
+	transform: translate(-50%, -50%)
+
+	@media (min-width: $burgerMenuShowWidth)
+		display: none
+
+	img
+		+block-size(2em, 2em)
+
+.submenu-button
+	+flex-set(row, nowrap)
+	align-items: center
+	justify-content: space-between
+	padding: 5px
+	border: 2px solid #000
+	font-weight: bold
+
+	&:after
+		display: inline-block
+		+block-size(1em, 1em)
+		+bg-img-multi-type('../img/icons/arrowDown.svg', no-repeat center / contain)
+		margin-left: 15px
+		transition: all .3s ease
+		content: ''
+
+	&:hover
+		&:after
+			transform: rotate(20deg)
+
+	&.active
+		&:after
+			transform: rotate(180deg)
+
+.submenu-menu
+	padding: 15px
+
+.bordered-item, ._bordered-item
+	border: 2px solid #000
+	padding: 5px 1.5em
+
+	&_red
+		&:hover, &:focus
+			border-color: #FE5E55
+
+.separator
+	min-height: 100%
+	min-width: 1px
+	background: #9e9e9e
+
+._text-uppercase
+	text-transform: uppercase
+._rodchenko-font
+	font-family: Rodchenko
+._teko-font
+	font-family: Teko
+._futura-font
+	font-family: Futura
+	font-weight: bold
+
+.black-button, ._black-button
+	background: #fff
+	font-size: adaptiveFontSize(56, 32)
+	color: #000
+	transition: all .2s ease
+
+	&:hover, &:focus
+		color: #fff
+		background: #000
+
+._red-button
+	background: #fff
+	font-size: adaptiveFontSize(56, 32)
+	color: #000
+	transition: all .2s ease
+
+	&:hover, &:focus
+		color: #fff
+		background: #FE5E55
+
+._block-shadow
+	box-shadow: 0 4px 50px rgba(0,0,0,0.2)
+
+.searchbar
+	&__body
+		+flex-set(column, nowrap)
+		align-items: center
+
+		&_vertical
+			+notLastChildMargin(0 0 15px 0)
+
+	&__input
+		padding: 5px 20px
+		padding-right: 5px
+		color: #717171
+
+		@media (max-width: 350px)
+			padding: 5px
+
+	&__submit
+		+flex-set(row, nowrap)
+		justify-content: center
+		align-items: center
+		&:before
+			display: inline-block
+			+block-size(1em)
+			+bg-img-multi-type('../img/icons/search.svg', no-repeat center / contain)
+
+			margin-right: 5px
+			content: ''
+
+	&__submit-icon
+		transition: all .2s ease
+		&:hover, &:focus
+			transform: scale(1.1)
+
+.brands
+	&__body, &_grid
+		display: grid
+		grid-template: 'brand brand' auto / 1fr 1fr
+		gap: 15px
+
+		@media (min-width: 1200px)
+			grid-template-columns: repeat(3, 1fr)
+		@media (max-width: 426px)
+			grid-template: 'brand' auto / 1fr
+
+		&_rows
+			+flex-set(column, nowrap)
+			gap: 0
+			+notLastChildMargin(0 0 15px 0)
+
+	&__item
+
+.product
+	&__body
+		+block-size(100%)
+
+		&_row-view
+			display: grid
+			grid-template-columns: 300px 1fr
+			gap: 25px
+			@media (max-width: 1000px)
+				grid-template-columns: 150px 1fr
+			@media (max-width: 600px)
+				gap: 0px
+				box-shadow: 0 0 35px rgba(0,0,0,0.2)
+			@media (min-width: 426px) and (max-width: 600px)
+				.product__preview
+					max-height: 200px
+			@media (max-width: 426px)
+				grid-template-columns: 110px 1fr
+
+			.product__content
+				@media (max-width: 600px)
+					justify-items: start
+
+		&_grid-view
+			display: grid
+			// height of first row (in this case - preview block)
+			grid-template-rows: 200px
+			// height of other rows
+			grid-auto-rows: auto
+			gap: 15px
+			@media (max-width: 600px)
+				gap: 0px
+				box-shadow: 0 0 35px rgba(0,0,0,0.2)
+
+			@media (max-width: 500px)
+				grid-template-rows: 120px
+
+			.product__content
+				display: grid
+				grid-template: 'name name' auto 'deleteButton addButton' auto / 1fr 1fr
+				@media (max-width: 500px)
+					padding: 15px
+
+			.product__name
+				font-size: adaptiveFontSize(32, 24)
+				text-align: center
+				@media (max-width: 500px)
+					font-size: adaptiveFontSize(28, 18)
+
+			.product__delete-from-card
+				justify-self: start
+			.product__add-to-card
+				justify-self: end
+
+			.product__delete-from-card, .product__add-to-card
+				margin-top: auto
+
+		&_received
+			.product__preview
+				background: #d3d3d3
+			.product__content
+				background: #d3d3d3
+			.product__buy-btn
+				background: #d3d3d3
+				pointer-events: none
+
+	&__preview
+		padding: 10px
+		background: #fff
+		@media (max-width: 600px)
+			box-shadow: none
+
+	&__content
+		display: grid
+		grid-template: 'name deleteButton' auto 'name addButton' auto / 1fr .1fr
+		align-items: center
+		padding: 20px 60px
+		background: #fff
+		gap: 15px
+		@media (max-width: 1000px)
+			padding: 20px 30px
+		@media (max-width: 600px)
+			box-shadow: none
+			grid-template: 'name name' auto 'deleteButton addButton' auto / 1fr 1fr
+
+	&__name
+		grid-area: name
+		font-size: adaptiveFontSize(48, 24)
+
+	&__delete-from-card, &__add-to-card
+		@media (max-width: 600px)
+			margin-top: auto
+
+		svg
+			+block-size(70px)
+			@media (max-width: 1000px)
+				+block-size(50px)
+
+		rect
+			stroke-width: 5px
+			transition: all .2s ease
+
+	&__delete-from-card
+		grid-area: deleteButton
+
+		rect
+			stroke: #C4C4C4
+
+		&:hover, &:focus
+			rect
+				stroke: #000
+				fill: transparent
+
+	&__add-to-card
+		grid-area: addButton
+
+		@media (max-width: 600px)
+			justify-self: end
+
+		&:hover, &:focus
+			.product__add-to-card-bg-rect
+				stroke: #000
+				fill: transparent
+
+		&-bg-rect
+			stroke: #A3DDE6
+			fill: #A3DDE6
+
+.product
+	@media (max-width: 600px)
+		position: relative
+
+	&__body
+		@media (max-width: 600px)
+			grid-template-columns: 100%
+
+	&__preview
+
+		&_slider
+			display: grid
+			gap: 15px
+			>*
+				width: 100%
+		&_image
+
+		&-slider
+			@media (max-width: 600px)
+				max-height: 200px
+		&-thumbs
+			align-self: end
+			.swiper-wrapper
+				+flex-set(row, wrap)
+				justify-content: center
+				.swiper-slide
+					text-align: center
+
+		&-thumb
+			display: inline-block
+			+block-size(35px)
+			cursor: pointer
+			padding: 10px
+
+			@media (max-width: 1000px)
+				+block-size(20px)
+
+			&_red-color
+				background: #C51115
+			&_black-color
+				background: #1C1C1C
+
+	&__content
+
+		&_card-version
+			display: grid
+			grid-template: 'name name' auto 'price buyBtn' auto / .4fr 1fr
+			gap: 55px
+			padding-right: 80px
+
+			@media (min-width: 600px)
+				position: relative
+
+			@media (max-width: 1000px)
+				padding-right: 60px
+			@media (max-width: 768px)
+				gap: 15px
+			@media (max-width: 650px)
+				grid-template: 'name name' auto 'price price' auto 'buyBtn buyBtn' auto / 1fr 1fr !important
+
+	&__name
+		grid-area: name
+
+	&__price
+		grid-area: price
+		font-size: adaptiveFontSize(56, 32)
+		font-weight: 400
+
+		&:after
+			content: ' $'
+
+	&__buy-btn
+		grid-area: buyBtn
+		font-size: adaptiveFontSize(56, 32)
+		justify-self: center
+
+	&__delete-from-card
+
+		&_fixed
+			z-index: 1
+			+advansedPosition(absolute, 0, 0, auto, auto)
+
+.products-card
+	&__body
+		+flex-set(column, nowrap)
+		+notLastChildMargin(0 0 25px 0)
+		.product__buy-btn
+			justify-self: end
+
+.input-wrapper
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+	gap: 20px
+
+	&_auto-fill
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+
+._is-saved
+	&:after
+		color: green
+		content: ' is saved'
+
+._is-not-saved
+	&:after
+		color: red
+		content: ' is not saved'
+
+._white-bg
+	background: #fff
+
+.products
+	&__body
+		&_grid
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			gap: 25px
+
+			@media (max-width: 1050px)
+				grid-template-columns: repeat(2, 1fr)
+			@media (max-width: 768px)
+				gap: 15px
+			@media (max-width: 426px)
+				gap: 8px
+
+		&_rows
+			+flex-set(column, nowrap)
+			+notLastChildMargin(0 0 25px 0)
+
+.errors-container
+	+flex-set(column, nowrap)
+	background: #FE5E55
+	+notLastChildMargin(0 0 10px 0)
+
+	>*
+		padding: 8px 15px

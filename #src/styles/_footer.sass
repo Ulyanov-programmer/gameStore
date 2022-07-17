@@ -1,0 +1,50 @@
+.footer
+	background: #000
+
+	&__body
+		+flex-set(row, wrap)
+		justify-content: space-between
+		padding: 3rem
+		+notLastChildMargin(0 25px 0 0)
+
+		@media (max-width: 768px)
+			padding: 1.5em
+
+	&__socials
+		+flex-set(row, wrap)
+		+notLastChildMargin(0 1rem 0 0)
+
+	&__buttons
+		+flex-set(row, wrap)
+		+notLastChildMargin(0 1rem 0 0)
+
+	&__socials, &__buttons
+		svg
+			+block-size(50px)
+
+			@media (max-width: 426px)
+				+block-size(30px)
+
+.social, .prev-page-btn
+	path
+		transition: all .2s ease
+	&:hover, &:focus
+		path
+			fill: #fff
+
+.prev-page-btn
+
+.to-top-btn
+	path
+		transition: all .2s ease
+	&:hover, &:focus
+		path
+			animation: arrowToTop 0.5s ease
+
+@keyframes arrowToTop
+	0%
+		transform: translate3d(0, 0%, 0)
+	50%
+		transform: translate3d(0, -10%, 0)
+	100%
+		transform: translate3d(0, 0%, 0)

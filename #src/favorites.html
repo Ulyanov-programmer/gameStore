@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	@@include('components/_headContent.htm', {
+	"title": "Favorites",
+	})
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/searchResults.min.css">
+</head>
+
+<body>
+	@@include('_header.htm', {
+	'page': 'favs',
+	})
+	<h1 hidden>Скрытый_заголовок_страницы</h1>
+	<main class="main">
+		<div class="main__body">
+			<section class='products'>
+				<div class='products__body products__body_grid'>
+					@@include('components/_product.htm', {
+						'imgName': 'product1',
+						'title': 'Беспроводной геймпад Brick One',
+						'addClasses': 'product__body_grid-view',
+					})
+					@@include('components/_product.htm', {
+						'imgName': 'product2',
+						'title': 'Беспроводной геймпад Xbox особой серии Phantom Magenta',
+						'addClasses': 'product__body_grid-view',
+					})
+					@@include('components/_product.htm', {
+						'imgName': 'product3',
+						'title': 'Беспроводной геймпад Sony DualSense Switch edition',
+						'addClasses': 'product__body_grid-view',
+					})
+				</div>
+			</section>
+		</div>
+	</main>
+@@include('components/_modals.htm', {
+	
+})
+</body>
+
+<script type="module" src="scripts/generalScript.js"></script>
+<script type="module" src="scripts/burgerMenuAPI.js"></script>
+<script type="module" src="scripts/submenuAPI.js"></script>
+<script type="module" src="scripts/modalWindowAPI.js"></script>
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->

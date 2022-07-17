@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- maximum-scale=1.0, user-scalable=0 does not allow content to be scaled on Android. -->
+<!-- Disables forced link for phone number on iOS -->
+<meta name="format-detection" content="telephone=no">
+
+<meta name="description" content="description">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="./img/favicon.svg">
+<link rel="mask-icon" href="./img/favicon.svg" color="#000000">
+<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+<!-- <link rel="manifest" href="manifest.json"> -->
+
+<link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" crossorigin>
+
+<!-- SEO
+    <meta name="keywords" content="keyword1,">
+    <meta name="robots" content="none,noindex,nofollow,noimageindex,noarchive,nosnippet">
+    <meta name="Author" content="Author">
+    <meta name="Copyright" content="Copyright">
+    <meta name="Address" content="Address"> 
+    <! - Redirect (reload) the page. Delay in seconds; url=Site / page address ->
+    <meta http-equiv="refresh" content="seconds; url = URL">
+
+    Facebook
+    <! - site localization, for the Russian-language site ru_RU ->
+    <meta property="og:locale" content="ru_RU">
+    <! - content type, default is article ->
+    <meta property="og:type" content="article">
+    <! - the title of the page that will be displayed in the post of the social network ->
+    <meta property="og:title" content="META tags">
+    <! - page description ->
+    <meta property="og:description" content="Description of the page about META tags">
+    <! - link to the image that will be published in the post ->
+    <meta property="og:image" content="path">
+    <! - link to the current page ->
+    <meta property="og: url" content="path">
+    <! - site name ->
+    <meta property="og:site_name" content="Freelancer for life">
+
+    Twitter
+    <! - Map type, default is summary ->
+    <meta name="twitter: card" content="summary">
+    <! - Author name / login ->
+    <meta name="twitter: site" content="Ivan">
+    <! - Page title ->
+    <meta name="twitter: title" content="META tags">
+    <! - Page description ->
+    <meta name="twitter: description" content="about META tags">
+    <! - Link to image ->
+    <meta name="twitter: image" content="path">
+  -->
+
+<title>Your card</title>
+	<link rel="stylesheet" href="css/style.min.css?_v=20220717123536">
+	<link rel="stylesheet" href="css/card.min.css?_v=20220717123536">
+</head>
+
+<body>
+	<header class="header">
+	<div class="header__body">
+		<div class="header__top">
+			<div class="header__top-container container">
+				<button type="button" id="burgerButton" class="header__burger burger-btn" aria-label="burger-menu show button">
+					<svg class="burger-btn__svg" width="40" height="40" viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+						<rect class="burger-btn__rect-top" width="95%" height="20%" x="5%" y="0%" fill="#000" />
+						<rect class="burger-btn__rect-center" width="95%" height="20%" x="5%" y="40%" fill="#000" />
+						<rect class="burger-btn__rect-bottom" width="95%" height="20%" x="5%" y="80%" fill="#000" />
+					</svg>
+				</button>
+				<nav class="burger-menu">
+					<div class="burger-menu__body">
+						<ul>
+							<li class="fs-element">
+								<a class="nav-link nav-link_home" target="_self" rel="noopener" href="index.html">Главная</a>
+							</li>
+							<li class="fs-element">
+								
+								<button data-open-modal-id="searchModal" class="nav-link nav-link_search" type='button'>Поиск</button>
+								
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_favorites" target="_self" rel="noopener" href="favorites.html">Избранное</a>
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_card" target="_self" rel="noopener" href="card.html">Корзина</a>
+							</li>
+							<li class="fs-element">
+								<a class="nav-link nav-link_profile" target="_self" rel="noopener" href="profile.html">Профиль</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<nav class="navmenu">
+					<div class="navmenu__body">
+						<ul class='navmenu__list'>
+							<li>
+								<a class="header-link nav-link nav-link_home " target="_self" rel="noopener" href="index.html">Home</a>
+							</li>
+							
+							<li>
+								<button data-open-modal-id="searchModal" class="header-link nav-link nav-link_search " type='button'>Search</button>
+							</li>
+							
+							<li>
+								<a class="header-link nav-link nav-link_favorites " target="_self" rel="noopener" href="favorites.html">Favorites</a>
+							</li>
+							<li>
+								<a class="header-link nav-link nav-link_card active" target="_self" rel="noopener" href="card.html">Card</a>
+							</li>
+							<li>
+								<a class="header-link nav-link nav-link_profile " target="_self" rel="noopener" href="profile.html">Profile</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<div class="current-page-icon">
+					
+					
+					
+					
+					<img src="img/icons/briefcase.svg" loading='lazy' alt='favoritesIcon' width=62 height=62>
+					
+					
+				</div>
+
+				<a href="index.html" class="logo _contain-img" aria-label="logo, reference to main page">
+					<picture><source srcset="img/logo.avif" type="image/avif"><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo" width=294 height=111></picture>
+				</a>
+			</div>
+		</div>
+		<div class="header__bottom">
+			<div class="header__bottom-container  container">
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</header>
+
+	<h1 hidden tabindex='0' class='products__title'>Hidden title</h1>
+	<main class="main">
+		<div class="main__body">
+			<section class='products-card'>
+				<div class='products-card__body'>
+					<section class="product">
+	<div class="product__body product__body_row-view">
+		
+		
+		<div class="product__preview product__preview_slider _block-shadow">
+			<div class='swiper product__preview-slider'>
+				<div class='swiper-wrapper'>
+					<div class='swiper-slide _contain-img'>
+						<picture><source srcset="img/content/product1.avif" type="image/avif"><source srcset="img/content/product1.webp" type="image/webp"><img src="img/content/product1.png" loading='lazy' alt='Brick One Wireless Gamepad' width=539 height=512></picture>
+					</div>
+					<div class='swiper-slide _contain-img'>
+						<picture><source srcset="img/content/product1.avif" type="image/avif"><source srcset="img/content/product1.webp" type="image/webp"><img src="img/content/product1.png" loading='lazy' alt='Brick One Wireless Gamepad' width=539 height=512></picture>
+					</div>
+				</div>
+			</div>
+			<div class='swiper product__preview-thumbs'>
+				<div class='swiper-wrapper'>
+					<div class='swiper-slide'><span class="product__preview-thumb product__preview-thumb_red-color"></span></div>
+					<div class='swiper-slide'><span class="product__preview-thumb product__preview-thumb_black-color"></span></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="product__content product__content_card-version _futura-font _block-shadow">
+			<h2 class="product__name">Brick One Wireless Gamepad</h2>
+
+			<span class="product__price _teko-font">100</span>
+			<button type="button" class="product__buy-btn black-button _teko-font bordered-item">Buy</button>
+
+			<button type="button" class="product__delete-from-card product__delete-from-card_fixed">
+				<svg width="130" height="131" viewBox="0 0 130 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="130" height="131" fill="#C4C4C4" />
+					<path d="M37 94L93 37M37 37L93 93.5632" stroke="black" stroke-width="10" />
+				</svg>
+			</button>
+		</div>
+	</div>
+</section>
+					<section class="product">
+	<div class="product__body product__body_row-view">
+		
+		<div class="product__preview product__preview_image  _contain-img _block-shadow">
+			<picture><source srcset="img/content/product2.avif" type="image/avif"><source srcset="img/content/product2.webp" type="image/webp"><img src="img/content/product2.png" loading='lazy' alt='Brick One Wireless Gamepad 2' width=539 height=512></picture>
+		</div>
+		
+		
+		<div class="product__content product__content_card-version _futura-font _block-shadow">
+			<h2 class="product__name">Brick One Wireless Gamepad 2</h2>
+
+			<span class="product__price _teko-font">100</span>
+			<button type="button" class="product__buy-btn black-button _teko-font bordered-item">Buy</button>
+
+			<button type="button" class="product__delete-from-card product__delete-from-card_fixed">
+				<svg width="130" height="131" viewBox="0 0 130 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="130" height="131" fill="#C4C4C4" />
+					<path d="M37 94L93 37M37 37L93 93.5632" stroke="black" stroke-width="10" />
+				</svg>
+			</button>
+		</div>
+	</div>
+</section>
+				</div>
+			</section>
+			<form id="buy-form" class='buy-form'>
+				<div class='buy-form__body'>
+					<section class="buy-form__spoiler-wrapper">
+						<button type='button' class='spoiler_btn buy-form__spoiler-btn _futura-font'>
+							<span>Delivery address</span>
+
+							<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="3.5" y="3.5" width="143" height="143" stroke="black" stroke-width="7" />
+								<path
+									d="M117.02 80.9316L118.52 80.9316L118.52 79.4316L118.52 70.0197L118.52 68.5197L117.02 68.5197L81.2059 68.5197L81.2059 32.7059L81.2059 31.2059L79.7059 31.2059H70.2941L68.7941 31.2059L68.7941 32.7059L68.7941 68.5197L32.9803 68.5197L31.4803 68.5197L31.4803 70.0197L31.4803 79.4316L31.4803 80.9316L32.9803 80.9316L68.7941 80.9316L68.7941 116.745V118.245H70.2941H79.7059H81.2059V116.745L81.2059 80.9316L117.02 80.9316Z"
+									fill="black" stroke="black" stroke-width="3" />
+								<rect class="rect-for-active" x="20%" y="45%" width="59%" height="14" fill="black" />
+							</svg>
+						</button>
+
+						<div class='spoiler_content buy-form__spoiler-content'>
+							<fieldset class='buy-form-form__body'>
+								<div class="input-wrapper">
+									<input class='recipient _bordered-item' type='text' name='recipient' placeholder='Recipient' required>
+									<input class='phone _bordered-item' type='tel' name='tel' placeholder='Phone number' required>
+								</div>
+								<div class="input-wrapper input-wrapper_auto-fill input-wrapper_small-padding">
+									<input class='_bordered-item' type='text' name='address' placeholder='Street, house, apartment' required>
+								</div>
+
+								<div class="input-wrapper">
+									<input class='region _bordered-item' type='text' name='region' placeholder='Region' required>
+									<input class='_bordered-item' type='text' name='city' placeholder='City' required>
+									<input class='mail-index _bordered-item' type='number' name='mail index' placeholder='Mail index' required>
+								</div>
+								<div id="sendType" class="input-wrapper input-wrapper_auto-fill">
+									<input class='' type='radio' id='courier' value='Courier' name='send_type' required />
+									<label for='courier' tabindex="0">Courier</label>
+									<input class='' type='radio' id='mail' value='Mail' name='send_type' required />
+									<label for='mail' tabindex="0">Mail</label>
+								</div>
+							</fieldset>
+						</div>
+					</section>
+					<section class="buy-form__spoiler-wrapper">
+						<button type='button' class='spoiler_btn buy-form__spoiler-btn _futura-font'>
+							<span>Payment method</span>
+
+							<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="3.5" y="3.5" width="143" height="143" stroke="black" stroke-width="7" />
+								<path
+									d="M117.02 80.9316L118.52 80.9316L118.52 79.4316L118.52 70.0197L118.52 68.5197L117.02 68.5197L81.2059 68.5197L81.2059 32.7059L81.2059 31.2059L79.7059 31.2059H70.2941L68.7941 31.2059L68.7941 32.7059L68.7941 68.5197L32.9803 68.5197L31.4803 68.5197L31.4803 70.0197L31.4803 79.4316L31.4803 80.9316L32.9803 80.9316L68.7941 80.9316L68.7941 116.745V118.245H70.2941H79.7059H81.2059V116.745L81.2059 80.9316L117.02 80.9316Z"
+									fill="black" stroke="black" stroke-width="3" />
+								<rect class="rect-for-active" x="20%" y="45%" width="59%" height="14" fill="black" />
+							</svg>
+						</button>
+
+						<div class='spoiler_content buy-form__spoiler-content'>
+							<div class="buy-form__tab-buttons">
+								<button aria-label='the pay wariant: plastic card' data-toggle-elem-number='0' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/plasticCard.svg" loading='lazy' alt='plactic card' width=214 height=214>
+								</button>
+								<button aria-label='the pay wariant: google pay' data-toggle-elem-number='1' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/googlePay.svg" loading='lazy' alt='google pay' width=268 height=214>
+								</button>
+								<button aria-label='the pay wariant: paypal' data-toggle-elem-number='2' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/paypal.svg" loading='lazy' alt='paypal' width=240 height=214>
+								</button>
+							</div>
+							<div class="buy-form__tab-items">
+								<div class='tab__items'>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='owner-name _bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='card-number _bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='card-year _bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='' type='checkbox' id='cardSave' value='cardSave' name='card_save' />
+												<label for='cardSave' tabindex="0">Save the your card.</label>
+											</div>
+										</fieldset>
+									</div>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='_bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='_bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='_bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+										</fieldset>
+									</div>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='_bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='_bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='_bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='_bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<div id="errors-container" class="errors-container"></div>
+					<footer class="buy-form__footer">
+						<span class="buy-form__all-price _teko-font" aria-label="Полная цена">100</span>
+						<button type="submit" class="buy-form__buy-button _red-button _teko-font _bordered-item _bordered-item_red">Buy all</button>
+					</footer>
+				</div>
+			</form>
+		</div>
+	</main>
+
+</body>
+
+<script type="module" src="scripts/generalScript.js?_v=20220717123536"></script>
+<script type="module" src="scripts/burgerMenuAPI.js?_v=20220717123536"></script>
+<script type="module" src="scripts/modalWindowAPI.js?_v=20220717123536"></script>
+<script type="module" src="scripts/spoilerAPI.js?_v=20220717123536"></script>
+<script type="module" src="scripts/tabAPI.js?_v=20220717123536"></script>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20220717123536">
+<script defer src="scripts/swiper-bundle.min.js?_v=20220717123536"></script>
+<script type="module" src="scripts/sliders.js?_v=20220717123536"></script>
+
+<!-- JustValidate -->
+<script defer src="scripts/just-validate.production.min.js?_v=20220717123536"></script>
+<script type="module" src="scripts/justValidate.js?_v=20220717123536"></script>
+
+<section id="searchModal" class='modal-window'>
+	<div class="modal-window__body">
+		<div class="modal-window__content">
+			<form class='searchbar' action='#'>
+				<fieldset class='searchbar__body searchbar__body_vertical'>
+					<input class='searchbar__input bordered-item' type='text' name='searchinput' placeholder='Search query...' required>
+					<button class="searchbar__submit" type='submit'>Search</button>
+					<a href="searchResults.html">Results page</a>
+				</fieldset>
+			</form>
+			<button class="modal-window__closer modal-window__closer_non-active" type='button' data-modal-close></button>
+		</div>
+	</div>
+</section>
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->

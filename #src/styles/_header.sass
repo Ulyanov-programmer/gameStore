@@ -1,0 +1,136 @@
+.header
+	position: sticky
+	top: 0
+	z-index: 5
+	background: #fff
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1)
+
+	&__body
+
+	&__top
+		position: relative
+		box-shadow: 0 5px 20px rgba(0,0,0,0.1)
+		padding: 10px 0
+		&-container
+			+flex-set(row, nowrap)
+			justify-content: space-between
+			align-items: center
+
+	&__bottom
+		&-container
+			+flex-set(row, nowrap)
+			align-items: center
+			justify-content: space-between
+			+notLastChildMargin(0 1.5em 0 0)
+			>*
+				padding: 20px 0
+
+			@media (max-height: 600px)
+				>*
+					padding: 10px 0
+
+			@media (max-width: 426px)
+				flex-direction: column-reverse
+				align-items: start
+				+notLastChildMargin(0 0 0 0)
+				>:last-child
+					margin-bottom: 15px
+
+			&_row-on-mobile
+				@media (max-width: 426px)
+					flex-direction: row
+					>:last-child
+						margin-bottom: 0px
+
+			.separator
+				@media (max-width: 426px)
+					display: none
+
+.navmenu
+	&__body
+		margin-left: -10px
+
+	&__list
+		+flex-set(row, wrap)
+		+notLastChildMargin(0 15px 0 0)
+		margin-right: 15px
+
+		li
+			a, button
+				padding: 8px
+				color: #909090
+				text-align: left
+				transition: all .2s ease 0s
+
+				&.active, &:hover, &:focus
+					color: #000
+
+			.header-link
+				@media (max-width: 900px)
+					text-indent: -9999px
+
+.companies-row
+	+flex-set(row, nowrap)
+	+notLastChildMargin(0 1.5em 0 0)
+
+	overflow-x: scroll
+	padding-right: 3.8vw
+
+	scrollbar-width: none
+	&::-webkit-scrollbar
+		width: 0
+		height: 0
+
+	@media (max-width: 426px)
+		padding-right: 0vw
+
+	&-wrapper
+		overflow: hidden
+		margin-right: -3.8vw
+		width: 100%
+
+		@media (max-width: 426px)
+			margin-right: 0vw
+
+.company
+	color: inherit
+	transition: all .2s ease
+
+	&:hover, &:focus
+		color: #fff
+		background: #000
+
+#categoryMenuButton
+	@media (min-width: 768px)
+		width: 30vw
+
+.logo
+	z-index: 10
+
+	img
+		width: 10rem
+
+		@media (max-width: 768px)
+			width: 7rem
+		@media (max-width: 426px)
+			width: 5rem
+
+.view-set-buttons
+	+flex-set(row, nowrap)
+	align-items: center
+	justify-content: end
+
+.view-set-button
+	padding: 10px
+	svg
+		+block-size(30px)
+	rect
+		transition: all .3s ease
+
+	&.active, &:hover, &:focus
+		rect
+			fill: #000
+
+	&_grid
+
+	&_rows

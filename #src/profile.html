@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('components/_headContent.htm', {
+	"title": "Profile",
+	})
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/profile.min.css">
+	<link rel="stylesheet" href="css/card.min.css">
+</head>
+
+<body>
+	@@include('_header.htm', {
+	'page': 'profile',
+	})
+
+	<main class="main">
+		<div class="main__body">
+			<section class='profile'>
+				<div class='profile__body'>
+					<div class="profile__preview _contain-img _block-shadow _white-bg">
+						<img src="img/icons/profileAvatar.png" alt='Ovchinnikov Daniil' width=410 height=410>
+					</div>
+					<div class="profile__content _block-shadow _white-bg">
+						<h1 tabindex='0' class='profile__title _futura-font'>Ovchinnikov Daniil</h1>
+						<span class="profile__geodata-is-saved _is-saved _futura-font">Geodata</span>
+						<span class="profile__card-is-saved _is-not-saved _futura-font">Card</span>
+					</div>
+				</div>
+			</section>
+			<section class='profile-tabs'>
+				<div class='profile-tabs__body'>
+					<div class='profile-tabs__buttons tab__buttons'>
+						<button data-toggle-elem-number='0' type='button' class='profile-tabs__button profile-tabs__button_orders _futura-font _block-shadow'><span>My orders</span></button>
+						<button data-toggle-elem-number='1' type='button' class='profile-tabs__button profile-tabs__button_card _futura-font _block-shadow'><span>My card</span></button>
+						<button data-toggle-elem-number='2' type='button' class='profile-tabs__button profile-tabs__button_geodata _futura-font _block-shadow'><span>My geodata</span></button>
+					</div>
+					<div class='profile-tabs__content-items tab__items'>
+						<div class='profile-tabs__content-item tab__item'>
+							<div class="products__body_rows">
+								@@include('components/_productCard.htm', {
+								'imgName': 'product1',
+								'title': 'Brick One Wireless Gamepad',
+								'addClasses': 'product__body_row-view',
+								'previewType': 'slider',
+								'btnText': 'Tracking',
+								})
+								@@include('components/_productCard.htm', {
+								'imgName': 'product2',
+								'title': 'Brick One Wireless Gamepad 2',
+								'addClasses': 'product__body_row-view',
+								'previewType': 'image',
+								'btnText': 'To pay',
+								})
+								@@include('components/_productCard.htm', {
+								'imgName': 'playstationGamepad',
+								'title': 'Brick One Wireless Gamepad 3',
+								'addClasses': 'product__body_row-view product__body_received',
+								'previewType': 'image',
+								'btnText': 'Received',
+								})
+							</div>
+						</div>
+						<div class='profile-tabs__content-item tab__item'>
+							<div class="buy-form__body">
+								<div class="buy-form__tab-buttons">
+									<button aria-label='the pay wariant: plastic card' data-toggle-elem-number='0' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+										<img src="img/icons/plasticCard.svg" loading='lazy' alt='plactic card' width=214 height=214>
+									</button>
+									<button aria-label='the pay wariant: google pay' data-toggle-elem-number='1' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+										<img src="img/icons/googlePay.svg" loading='lazy' alt='google pay' width=268 height=214>
+									</button>
+									<button aria-label='the pay wariant: paypal' data-toggle-elem-number='2' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+										<img src="img/icons/paypal.svg" loading='lazy' alt='paypal' width=240 height=214>
+									</button>
+								</div>
+								<div class="buy-form__tab-items">
+									<div class='tab__items'>
+										<div class='buy-form__tab-item tab__item'>
+											<form class="buy-form__body buy-form__body_no-padding" action="#" id="cardForm">
+												<fieldset class='buy-form-form__body'>
+													<div class="input-wrapper input-wrapper_auto-fill">
+														<input class='owner-name _bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+													</div>
+													<div class="input-wrapper">
+														<input class='card-number _bordered-item' type='number' name='card number' placeholder='Number of card' required>
+														<input class='card-year _bordered-item' type='text' name='card year' placeholder='Year' required>
+														<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required autocomplete="off">
+													</div>
+													<div id="card-errors-container" class="errors-container"></div>
+
+													<button class='buy-form__submit _bordered-item _black-button _teko-font' type='submit'>Save</button>
+												</fieldset>
+											</form>
+										</div>
+										<div class='buy-form__tab-item tab__item'>
+											<form class="buy-form__body buy-form__body_no-padding" action="#" id="googlePay">
+												<fieldset class='buy-form-form__body'>
+													<div class="input-wrapper input-wrapper_auto-fill">
+														<input class='owner-name _bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+													</div>
+													<div class="input-wrapper">
+														<input class='card-number _bordered-item' type='number' name='card number' placeholder='Number of card' required>
+														<input class='card-year _bordered-item' type='text' name='card year' placeholder='Year' required>
+														<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required autocomplete="off">
+													</div>
+													<div id="google-pay-errors-container" class="errors-container"></div>
+
+													<button class='buy-form__submit _bordered-item _black-button _teko-font' type='submit'>Save</button>
+												</fieldset>
+											</form>
+										</div>
+										<div class='buy-form__tab-item tab__item'>
+											<form class="buy-form__body buy-form__body_no-padding" action="#" id="paypal">
+												<fieldset class='buy-form-form__body'>
+													<div class="input-wrapper input-wrapper_auto-fill">
+														<input class='owner-name _bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+													</div>
+													<div class="input-wrapper">
+														<input class='card-number _bordered-item' type='number' name='card number' placeholder='Number of card' required>
+														<input class='card-year _bordered-item' type='text' name='card year' placeholder='Year' required>
+														<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required autocomplete="off">
+													</div>
+													<button class='buy-form__submit _bordered-item _black-button _teko-font' type='submit'>Save</button>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='profile-tabs__content-item tab__item'>
+							<form class="buy-form__body" action="#" id="geodataForm">
+								<fieldset class='buy-form-form__body'>
+									<div class="input-wrapper">
+										<input class='recipient _bordered-item' type='text' name='recipient' placeholder='Recipient' required>
+										<input class='phone _bordered-item' type='tel' name='tel' placeholder='Phone number' required>
+									</div>
+									<div class="input-wrapper input-wrapper_auto-fill input-wrapper_small-padding">
+										<input class='_bordered-item' type='text' name='address' placeholder='Street, house, apartment' required>
+									</div>
+
+									<div class="input-wrapper">
+										<input class='region _bordered-item' type='text' name='region' placeholder='Region' required>
+										<input class='_bordered-item' type='text' name='city' placeholder='City' required>
+										<input class='mail-index _bordered-item' type='number' name='mail index' placeholder='Mail index' required>
+									</div>
+									<div id="geodata-errors-container" class="errors-container"></div>
+									<button class='buy-form__submit _bordered-item _black-button _teko-font' type='submit'>Save</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+</body>
+
+<script type="module" src="scripts/generalScript.js"></script>
+<script type="module" src="scripts/burgerMenuAPI.js"></script>
+<script type="module" src="scripts/modalWindowAPI.js"></script>
+<script type="module" src="scripts/tabAPI.js"></script>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="css/swiper-bundle.min.css">
+<script defer src="scripts/swiper-bundle.min.js"></script>
+<script type="module" src="scripts/sliders.js"></script>
+
+<!-- JustValidate -->
+<script defer src="scripts/just-validate.production.min.js"></script>
+<script type="module" src="scripts/profileValidation.js"></script>
+
+@@include('components/_modals.htm', {
+
+})
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->

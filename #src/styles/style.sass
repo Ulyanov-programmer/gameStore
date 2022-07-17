@@ -1,0 +1,185 @@
+@import 'other/_mixins'
+@import 'other/_fonts'
+@import 'other/_vars'
+@import 'modules/_nullStyle'
+@import 'other/_general'
+@import '_header'
+@import '_footer'
+@import 'modules/_submenu'
+@import 'modules/_form'
+@import 'modules/_burgerMenu'
+
+body
+	height: max-content
+	color: var(--text-c)
+	font: adaptiveFontSize($mainFontSize, $minFontSize) var(--main-font-family)
+	+bg-img-multi-type('../img/bg.jpg', repeat 0px 0px / cover)
+
+	button
+		color: var(--text-c)
+		font-size: adaptiveFontSize($mainFontSize, $minFontSize)
+
+.main
+
+	&__body
+		padding: 50px 5vw
+		+notLastChildMargin(0 0 30px 0)
+
+		@media (max-width: 426px)
+			padding: 1vh 2.5vw
+
+.fullscreen-block
+	&__body
+		display: grid
+		grid-template: 'image productName' auto 'image title' auto 'image btn' auto / 1fr 0.5fr
+		align-items: start
+		justify-items: start
+		gap: 40px 50px
+		padding: 80px
+		min-height: 600px
+		background: #fff
+
+		@media (max-width: 1000px)
+			grid-template: 'image productName' auto 'image title' auto 'image btn' auto / 1.1fr 0.9fr
+		@media (max-width: 768px)
+			grid-template: 'productName' auto 'title' auto 'image' 300px 'btn' auto / 1fr
+			gap: 20px 50px
+			padding: 15px
+			justify-items: center
+
+		&_custom-block
+			grid-template: 'productName image' auto ' title image' auto '.image' auto / 0.5fr 1fr
+
+			@media (max-width: 768px)
+				grid-template: 'productName' auto 'title' auto 'image' 300px 'btn' auto / 1fr
+				gap: 20px 50px
+				padding: 15px
+				justify-items: center
+
+	&__name-of-product
+		font-size: rem(92)
+		grid-area: productName
+
+		@media (min-width: 768px)
+			align-self: end
+		@media (max-width: 768px)
+			font-size: rem(64)
+			display: inline-block
+			word-wrap: anywhere
+
+		&_red
+			color: #FE5E55
+		&_blue
+			color: #00C8E5
+
+	&__title
+		display: inline-block
+		font-size: rem(62)
+		grid-area: title
+		font-weight: bold
+
+		@media (max-width: 768px)
+			font-size: rem(32)
+			align-self: center
+			text-align: center
+			word-wrap: anywhere
+			br
+				display: none
+
+	&__button
+		font-size: rem(78)
+		grid-area: btn
+		@media (min-width: 768px)
+			margin-top: 20px
+
+		@media (max-width: 768px)
+			font-size: rem(48)
+			justify-self: center
+
+	&__image
+		grid-area: image
+		align-self: stretch
+
+.category
+	background: #fff
+	color: inherit
+
+	&:hover, &:focus
+		.category__title
+			transform: scale(1.1)
+
+	&__body
+		+flex-set(column, nowrap)
+		justify-content: center
+		align-items: center
+		+notLastChildMargin(0 0 15px 0)
+		height: 100%
+		padding: 70px
+
+		@media (max-width: 1024px)
+			padding: 30px
+
+	&__preview
+		grid-area: preview
+
+	&__title
+		text-align: center
+		font-size: rem(48)
+		transition: all .3s ease
+
+		@media (max-width: 768px)
+			font-size: rem(28)
+
+.other
+
+	&__body
+		display: grid
+		grid-template: 'aboutUs vr' auto 'controllers vr' auto 'controllers components' auto 'wantToNow components' auto / 1fr 1fr
+		gap: 15px
+
+		@media (max-width: 768px)
+			grid-template-rows: 170px
+			grid-auto-rows: 170px
+		@media (max-width: 500px)
+			grid-template: 'aboutUs' auto 'vr' auto 'controllers' auto 'components' auto 'wantToNow' auto / 1fr
+
+.about-us
+	grid-area: aboutUs
+	+flex-set(row, nowrap)
+	justify-content: center
+	align-items: center
+	font-size: adaptiveFontSize(96, 32)
+	color: #fff
+	background: #000
+	padding: 70px 20px
+	border: 2px solid #000
+	transition: all .2s ease
+
+	&:hover, &:focus
+		background: gray
+
+.vr
+	grid-area: vr
+
+.controllers
+	grid-area: controllers
+
+.components
+	grid-area: components
+
+.want-to-now
+	grid-area: wantToNow
+	+flex-set(row, nowrap)
+	justify-content: center
+	align-items: center
+	font-size: adaptiveFontSize(64, 24)
+	padding: 70px 20px
+	text-align: center
+	color: inherit
+	+bg-img-multi-type('../img/wantToNowBg.jpg', no-repeat center / cover)
+
+	&:hover, &:focus
+		h3
+			transform: scale(1.1)
+	h3
+		transition: all .3s ease

@@ -1,0 +1,204 @@
+:root {
+  --text-c: #000;
+  --main-font-family: Roboto;
+  --bg: #fff;
+}
+
+.buy-form__spoiler-btn {
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.buy-form__body {
+  padding: 80px;
+  background: #fff;
+}
+
+.buy-form__body > *:not(:last-child) {
+  margin: 0 0 75px 0;
+}
+
+.buy-form__body_no-padding {
+  padding: 0 !important;
+}
+
+.buy-form-form__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.buy-form-form__body > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.buy-form__spoiler-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.buy-form__spoiler-btn > *:not(:last-child) {
+  margin: 0 15px 0 0;
+}
+
+.buy-form__spoiler-btn:focus-visible {
+  text-decoration: underline;
+}
+
+.buy-form__spoiler-btn.active path {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.buy-form__spoiler-btn span {
+  font-size: calc( 0.0142857143 * 100vw + 27.4285714286px );
+  text-align: left;
+}
+
+.buy-form__spoiler-btn svg {
+  width: 50px;
+  height: 50px;
+}
+
+.buy-form__spoiler-btn path {
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.buy-form__spoiler-content {
+  padding-top: 30px;
+}
+
+.buy-form__tab-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  gap: 25px;
+}
+
+.buy-form__tab-button {
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+}
+
+.buy-form__tab-items {
+  padding-top: 50px;
+}
+
+.buy-form__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buy-form__footer > *:not(:last-child) {
+  margin: 0 15px 0 0;
+}
+
+.buy-form__all-price {
+  font-size: calc( 0.0214285714 * 100vw + 25.1428571429px );
+}
+
+.buy-form__all-price:after {
+  content: " $";
+}
+
+.buy-form__submit,
+.buy-form__buy-button {
+  font-family: Teko;
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+
+@media (max-width: 1500px) {
+  .buy-form__body {
+    padding: 50px;
+  }
+
+  .buy-form__body > *:not(:last-child) {
+    margin: 0 0 50px 0;
+  }
+}
+
+@media (max-width: 1440px) {
+  .buy-form__tab-button {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .buy-form__tab-button {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buy-form__body {
+    padding: 40px;
+  }
+
+  .buy-form__tab-button {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 550px) {
+  .buy-form__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+@media (max-width: 426px) {
+  .buy-form__body {
+    padding: 20px 5px;
+  }
+
+  .buy-form__spoiler-btn span {
+    font-size: calc( 0.0071428571 * 100vw + 21.7142857143px );
+  }
+}

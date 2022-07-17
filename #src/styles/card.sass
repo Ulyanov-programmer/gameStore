@@ -1,0 +1,104 @@
+@import 'other/_vars'
+@import 'other/_mixins'
+@import 'modules/_spoiler'
+
+.buy-form
+	&__body
+		padding: 80px
+		background: #fff
+		+notLastChildMargin(0 0 75px 0)
+
+		@media (max-width: 1500px)
+			padding: 50px
+			+notLastChildMargin(0 0 50px 0)
+
+		@media (max-width: 768px)
+			padding: 40px
+		@media (max-width: 426px)
+			padding: 20px 5px
+		&_no-padding
+			padding: 0 !important
+
+	&-form__body
+		+flex-set(column, nowrap)
+		>*
+			&:not(:last-child)
+				margin-bottom: 50px
+
+	&__spoiler
+		&-wrapper
+
+		&-btn
+			+flex-set(row, nowrap)
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			+notLastChildMargin(0 15px 0 0)
+			&:focus-visible
+				text-decoration: underline
+			&.active
+				path
+					transform: scale(0)
+				// .rect-for-active
+
+			span
+				font-size: adaptiveFontSize(48, 32)
+				text-align: left
+
+				@media (max-width: 426px)
+					font-size: adaptiveFontSize(32, 24)
+
+			svg
+				+block-size(50px)
+			path
+				transform-box: fill-box
+				transform-origin: center
+				transition: all .3s ease
+
+		&-content
+			padding-top: 30px
+
+	&__tab-buttons
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+		justify-items: center
+		gap: 25px
+
+	&__tab-button
+		+block-size(250px)
+		padding: 20px
+		@media (max-width: 1440px)
+			+block-size(200px)
+		@media (max-width: 1150px)
+			+block-size(150px)
+		@media (max-width: 768px)
+			+block-size(100px)
+
+	&__tab-items
+		padding-top: 50px
+
+	&__tab-item
+
+	&__footer
+		+flex-set(row, wrap)
+		align-items: center
+		justify-content: space-between
+		+notLastChildMargin(0 15px 0 0)
+
+		@media (max-width: 550px)
+			+flex-set(column, nowrap)
+
+	&__all-price
+		font-size: adaptiveFontSize(56, 32)
+		&:after
+			content: ' $'
+
+	&__submit, &__buy-button
+		font-family: Teko
+		align-self: end
+
+.spoiler
+
+	&_btn
+
+	&_content

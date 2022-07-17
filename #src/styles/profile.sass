@@ -1,0 +1,110 @@
+@import 'other/_vars'
+@import 'other/_mixins'
+
+.profile
+
+	&__body
+		position: relative
+		display: grid
+		grid-template-columns: .7fr 1.3fr
+		gap: 25px
+		@media (min-width: 1300px)
+			grid-template-columns: .5fr 1.5fr
+
+		@media (max-width: 768px)
+			grid-template-columns: 1fr
+		@media (max-width: 500px)
+			// size of row with avatar
+			grid-template-rows: 200px
+
+	&__preview
+		@media (min-width: 500px) and (max-width: 768px)
+			+advansedPosition(absolute, 0, 0, auto, auto)
+			+block-size(150px)
+
+	&__content
+		+flex-set(column, nowrap)
+		justify-content: center
+		align-items: start
+		+notLastChildMargin(0 0 25px 0)
+		padding: 50px
+		@media (min-width: 500px) and (max-width: 768px)
+			padding-right: 160px
+		@media (max-width: 426px)
+			padding: 25px
+
+	&__title
+		font-size: adaptiveFontSize(62, 32)
+
+	&__geodata-is-saved
+		font-weight: 400
+		font-size: adaptiveFontSize(28, 18)
+
+	&__card-is-saved
+		font-weight: 400
+		font-size: adaptiveFontSize(28, 18)
+
+.profile-tabs
+	background: #fff
+
+	&__body
+		+notLastChildMargin(0 0 25px 0)
+
+	&__buttons
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr))
+		gap: 25px
+
+		@media (min-width: 1500px)
+			grid-template-columns: repeat(3, 1fr)
+		@media (max-width: 426px)
+			grid-template-columns: 1fr
+
+	&__button
+		+flex-set(row, nowrap)
+		align-items: center
+		padding: 40px
+		text-align: left
+		font-size: adaptiveFontSize(48, 24)
+		background: #fff
+
+		@media (max-width: 1300px)
+			padding: 20px
+
+		&:before
+			display: inline-block
+			+block-size(50px)
+			margin-right: 15px
+
+			content: ''
+
+		&.active, &:hover, &:focus
+			span
+				&:after
+					+show()
+					transform: translate3d(0, 0, 0)
+
+		span
+			position: relative
+
+			&:after
+				+advansedPosition(absolute, auto, auto, -10%, 0)
+				display: inline-block
+				width: 80%
+				border-radius: 10px
+				height: 3px
+				background: #000
+				transform: translate3d(0%, 100%, 0)
+				transition: all .2s ease
+				+hide()
+				content: ''
+
+		&_orders
+			&:before
+				+bg-img-multi-type('../img/icons/orderComplited.svg', no-repeat center / contain)
+		&_geodata
+			&:before
+				+bg-img-multi-type('../img/icons/geopoint.svg', no-repeat center / contain)
+		&_card
+			&:before
+				+bg-img-multi-type('../img/icons/plasticCard.svg', no-repeat center / contain)

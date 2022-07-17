@@ -1,0 +1,38 @@
+@import 'other/_mixins'
+@import 'other/_vars'
+
+.searchbar-wrapper
+	+flex-set(row, nowrap)
+	align-items: center
+	flex: 1 1 auto
+
+	@media (max-width: 500px)
+		padding: 5px 10px
+
+	img
+		+block-size(30px)
+		@media (max-width: 426px)
+			+block-size(20px)
+
+.row-searchbar
+	flex: 1 1 auto
+	@media (max-width: 426px)
+		padding: 5px 8px
+
+	&__body
+		+flex-set(row, nowrap)
+		+notLastChildMargin(0 15px 0 0)
+		@media (max-width: 426px)
+			+notLastChildMargin(0 5px 0 0)
+
+	&__input
+		flex: 1 1 auto
+		font-size: rem(20)
+		padding: 5px !important
+		@media (max-width: 350px)
+			font-size: rem(14) !important
+
+	&__submit-icon
+		transition: all .2s ease
+		&:hover, &:focus
+			transform: scale(1.1)

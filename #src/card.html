@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('components/_headContent.htm', {
+	"title": "Your card",
+	})
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/card.min.css">
+</head>
+
+<body>
+	@@include('_header.htm', {
+	'page': 'card',
+	})
+
+	<h1 hidden tabindex='0' class='products__title'>Hidden title</h1>
+	<main class="main">
+		<div class="main__body">
+			<section class='products-card'>
+				<div class='products-card__body'>
+					@@include('components/_productCard.htm', {
+					'imgName': 'product1',
+					'title': 'Brick One Wireless Gamepad',
+					'addClasses': 'product__body_row-view',
+					'previewType': 'slider',
+					'btnText': 'Buy',
+					})
+					@@include('components/_productCard.htm', {
+					'imgName': 'product2',
+					'title': 'Brick One Wireless Gamepad 2',
+					'addClasses': 'product__body_row-view',
+					'previewType': 'image',
+					'btnText': 'Buy',
+					})
+				</div>
+			</section>
+			<form id="buy-form" class='buy-form'>
+				<div class='buy-form__body'>
+					<section class="buy-form__spoiler-wrapper">
+						<button type='button' class='spoiler_btn buy-form__spoiler-btn _futura-font'>
+							<span>Delivery address</span>
+
+							<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="3.5" y="3.5" width="143" height="143" stroke="black" stroke-width="7" />
+								<path
+									d="M117.02 80.9316L118.52 80.9316L118.52 79.4316L118.52 70.0197L118.52 68.5197L117.02 68.5197L81.2059 68.5197L81.2059 32.7059L81.2059 31.2059L79.7059 31.2059H70.2941L68.7941 31.2059L68.7941 32.7059L68.7941 68.5197L32.9803 68.5197L31.4803 68.5197L31.4803 70.0197L31.4803 79.4316L31.4803 80.9316L32.9803 80.9316L68.7941 80.9316L68.7941 116.745V118.245H70.2941H79.7059H81.2059V116.745L81.2059 80.9316L117.02 80.9316Z"
+									fill="black" stroke="black" stroke-width="3" />
+								<rect class="rect-for-active" x="20%" y="45%" width="59%" height="14" fill="black" />
+							</svg>
+						</button>
+
+						<div class='spoiler_content buy-form__spoiler-content'>
+							<fieldset class='buy-form-form__body'>
+								<div class="input-wrapper">
+									<input class='recipient _bordered-item' type='text' name='recipient' placeholder='Recipient' required>
+									<input class='phone _bordered-item' type='tel' name='tel' placeholder='Phone number' required>
+								</div>
+								<div class="input-wrapper input-wrapper_auto-fill input-wrapper_small-padding">
+									<input class='_bordered-item' type='text' name='address' placeholder='Street, house, apartment' required>
+								</div>
+
+								<div class="input-wrapper">
+									<input class='region _bordered-item' type='text' name='region' placeholder='Region' required>
+									<input class='_bordered-item' type='text' name='city' placeholder='City' required>
+									<input class='mail-index _bordered-item' type='number' name='mail index' placeholder='Mail index' required>
+								</div>
+								<div id="sendType" class="input-wrapper input-wrapper_auto-fill">
+									<input class='' type='radio' id='courier' value='Courier' name='send_type' required />
+									<label for='courier' tabindex="0">Courier</label>
+									<input class='' type='radio' id='mail' value='Mail' name='send_type' required />
+									<label for='mail' tabindex="0">Mail</label>
+								</div>
+							</fieldset>
+						</div>
+					</section>
+					<section class="buy-form__spoiler-wrapper">
+						<button type='button' class='spoiler_btn buy-form__spoiler-btn _futura-font'>
+							<span>Payment method</span>
+
+							<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="3.5" y="3.5" width="143" height="143" stroke="black" stroke-width="7" />
+								<path
+									d="M117.02 80.9316L118.52 80.9316L118.52 79.4316L118.52 70.0197L118.52 68.5197L117.02 68.5197L81.2059 68.5197L81.2059 32.7059L81.2059 31.2059L79.7059 31.2059H70.2941L68.7941 31.2059L68.7941 32.7059L68.7941 68.5197L32.9803 68.5197L31.4803 68.5197L31.4803 70.0197L31.4803 79.4316L31.4803 80.9316L32.9803 80.9316L68.7941 80.9316L68.7941 116.745V118.245H70.2941H79.7059H81.2059V116.745L81.2059 80.9316L117.02 80.9316Z"
+									fill="black" stroke="black" stroke-width="3" />
+								<rect class="rect-for-active" x="20%" y="45%" width="59%" height="14" fill="black" />
+							</svg>
+						</button>
+
+						<div class='spoiler_content buy-form__spoiler-content'>
+							<div class="buy-form__tab-buttons">
+								<button aria-label='the pay wariant: plastic card' data-toggle-elem-number='0' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/plasticCard.svg" loading='lazy' alt='plactic card' width=214 height=214>
+								</button>
+								<button aria-label='the pay wariant: google pay' data-toggle-elem-number='1' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/googlePay.svg" loading='lazy' alt='google pay' width=268 height=214>
+								</button>
+								<button aria-label='the pay wariant: paypal' data-toggle-elem-number='2' type='button' class='buy-form__tab-button _white-bg _block-shadow _contain-img'>
+									<img src="img/icons/paypal.svg" loading='lazy' alt='paypal' width=240 height=214>
+								</button>
+							</div>
+							<div class="buy-form__tab-items">
+								<div class='tab__items'>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='owner-name _bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='card-number _bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='card-year _bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='' type='checkbox' id='cardSave' value='cardSave' name='card_save' />
+												<label for='cardSave' tabindex="0">Save the your card.</label>
+											</div>
+										</fieldset>
+									</div>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='_bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='_bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='_bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='cvv _bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+										</fieldset>
+									</div>
+									<div class='buy-form__tab-item tab__item'>
+										<fieldset class='buy-form-form__body'>
+											<div class="input-wrapper input-wrapper_auto-fill">
+												<input class='_bordered-item' type='text' name='recipient' placeholder='Owner name' required>
+											</div>
+											<div class="input-wrapper">
+												<input class='_bordered-item' type='number' name='card number' placeholder='Number of card' required>
+												<input class='_bordered-item' type='text' name='card year' placeholder='Year' required>
+												<input class='_bordered-item' type='password' name='card secret' placeholder='***' required>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<div id="errors-container" class="errors-container"></div>
+					<footer class="buy-form__footer">
+						<span class="buy-form__all-price _teko-font" aria-label="Полная цена">100</span>
+						<button type="submit" class="buy-form__buy-button _red-button _teko-font _bordered-item _bordered-item_red">Buy all</button>
+					</footer>
+				</div>
+			</form>
+		</div>
+	</main>
+
+</body>
+
+<script type="module" src="scripts/generalScript.js"></script>
+<script type="module" src="scripts/burgerMenuAPI.js"></script>
+<script type="module" src="scripts/modalWindowAPI.js"></script>
+<script type="module" src="scripts/spoilerAPI.js"></script>
+<script type="module" src="scripts/tabAPI.js"></script>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="css/swiper-bundle.min.css">
+<script defer src="scripts/swiper-bundle.min.js"></script>
+<script type="module" src="scripts/sliders.js"></script>
+
+<!-- JustValidate -->
+<script defer src="scripts/just-validate.production.min.js"></script>
+<script type="module" src="scripts/justValidate.js"></script>
+
+@@include('components/_modals.htm', {
+
+})
+
+</html>
+
+<!-- Made in Russia, with ❤, by Ivan Ulyanov. -->
